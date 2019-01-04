@@ -28,6 +28,9 @@ mongoClient.connect(url, function(err, db) {
 
     // Insert it to the collection:
     collection.insert(testDocument, function(err, docs) {
+      if (err) {
+        console.log(err);
+      }
       console.log('Inserted a document.');
 
       // Colletion#count() gives us the number of items in collection:
